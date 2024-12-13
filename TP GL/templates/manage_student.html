@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Students Attendance</title>
+    <link rel="stylesheet" href="enhanced_styles.css">
+</head>
+<body>
+    <h1>Manage Students for Session {{ session_id }}</h1>
+    
+    <!-- Back Button -->
+    <a href="{{ url_for('view_sessions', group_id=group_id) }}">Back to Sessions</a>
+    
+    <form method="POST" action="{{ url_for('save_attendance', group_id=group_id, session_id=session_id) }}">
+        {% for student in students %}
+        <div>
+            <label>{{ loop.index }}. {{ student.name }} {{ student.surname }}</label>
+            <select name="attendance_{{ student.id }}[status]">
+                <option value="present" {% if student.attendance_status == 'present' %}selected{% endif %}>Present</option>
+                <option value="absent" {% if student.attendance_status == 'absent' %}selected{% endif %}>Absent</option>
+                <option value="justified" {% if student.attendance_status == 'justified' %}selected{% endif %}>Justified Absence</option>
+            </select>
+            <input type="text" name="attendance_{{ student.id }}[observation]" value="{{ student.observation }}" placeholder="Observation (optional)">
+        </div>
+        {% endfor %}
+        <button type="submit">Save Attendance</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Group - Class {{ class_id }}</title>
+    <link rel="stylesheet" href="enhanced_styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Add New Group for Class ID: {{ class_id }}</h1>
+    </div>
+
+    <div class="content">
+        <form action="{{ url_for('add_group', class_id=class_id) }}" method="post">
+            <label for="group-name">Group Name:</label>
+            <input type="text" id="group-name" name="group-name" required><br>
+
+            <label for="group-type">Group Type:</label>
+            <select id="group-type" name="group-type" required>
+                <option value="TD">TD</option>
+                <option value="TP">TP</option>
+            </select><br>
+
+            <button type="submit">Add Group</button>
+        </form>
+
+        <a href="{{ url_for('groups', class_id=class_id) }}" class="back-link">Back to Groups</a>
+    </div>
+</body>
+</html>

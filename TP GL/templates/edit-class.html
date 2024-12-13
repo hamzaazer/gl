@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier une Classe</title>
+    <link rel="stylesheet" href="enhanced_styles.css">
+<body>
+
+    <div class="header">
+        <h1>Edit the Class</h1>
+    </div>
+
+    <div class="content">
+        <div class="form-container">
+            <form action="/edit-class/{{ class_data[0] }}" method="POST">
+                <input type="text" name="class-name" value="{{ class_data[1] }}" required>
+                <input type="text" name="specialty" value="{{ class_data[2] }}" required>
+                <input type="text" name="level" value="{{ class_data[3] }}" required>
+                <input type="text" name="year" value="{{ class_data[4] }}" required>
+                <button type="submit" class="btn">Update</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

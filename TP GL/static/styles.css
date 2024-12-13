@@ -1,0 +1,211 @@
+/* Style global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9; /* Fond léger et apaisant */
+    color: #333; /* Texte sombre pour un bon contraste */
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #606C38; /* Vert apaisant de la palette */
+    font-weight: 600;
+}
+
+h2, h3 {
+    margin-top: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #BC6C25; /* Couleur chaude et accueillante pour les liens */
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #283618; /* Couleur plus foncée au survol */
+}
+
+header, footer {
+    background-color: #283618; /* Fond sombre pour l'en-tête et le pied de page */
+    color: #FEFAE0; /* Texte clair pour contraster avec le fond sombre */
+    text-align: center;
+    padding: 15px;
+}
+
+header a, footer a {
+    color: #FEFAE0;
+    margin: 0 15px;
+}
+
+header a:hover, footer a:hover {
+    color: #DD9E5A; /* Hover pour le lien dans header et footer */
+}
+
+/* Conteneur principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Mise en page des titres */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Liste des éléments (ex: classes, groupes) */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    background-color: #FEFAE0; /* Fond léger pour les éléments */
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+ul li:hover {
+    background-color: #DD9E5A; /* Fond apaisant au survol */
+    color: #fff;
+}
+
+ul li strong {
+    font-size: 1.1rem;
+    color: #606C38;
+}
+
+ul li a {
+    background-color: #BC6C25;
+    color: #FEFAE0;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+ul li a:hover {
+    background-color: #283618;
+    color: #FEFAE0;
+}
+
+/* Formulaires */
+form {
+    background-color: #FEFAE0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+form input, form select, form textarea {
+    padding: 10px;
+    width: 100%;
+    margin: 10px 0;
+    border: 1px solid #DD9E5A;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+form input[type="submit"] {
+    background-color: #BC6C25;
+    color: #FEFAE0;
+    cursor: pointer;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background-color: #283618;
+}
+
+form input[type="text"]:focus, form select:focus, form textarea:focus {
+    border-color: #606C38;
+    outline: none;
+}
+
+/* Tableau de classes et groupes */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #DD9E5A;
+    padding: 10px;
+}
+
+th {
+    background-color: #606C38;
+    color: #FEFAE0;
+}
+
+td {
+    background-color: #FEFAE0;
+}
+
+table tr:hover {
+    background-color: #DD9E5A;
+    color: #fff;
+}
+
+/* Boutons */
+button {
+    background-color: #BC6C25;
+    color: #FEFAE0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #283618;
+}
+
+/* Pages de gestion (classe, groupe) */
+.page {
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.page a {
+    display: inline-block;
+    background-color: #BC6C25;
+    color: #FEFAE0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+.page a:hover {
+    background-color: #283618;
+    color: #FEFAE0;
+}
+

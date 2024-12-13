@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Session</title>
+    <link rel="stylesheet" href="enhanced_styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Edit Session</h1>
+    </div>
+    <div class="form-container">
+        <form method="POST">
+            <div class="form-group">
+                <label for="session-date">Session Date:</label>
+                <input type="date" id="session-date" name="session-date" class="form-control" value="{{ session['date'] }}" required>
+            </div>
+            <div class="form-group">
+                <label for="session-time">Session Start Time:</label>
+                <input type="time" id="session-time" name="session-time" class="form-control" value="{{ session['start_time'] }}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+        
+        <a href="{{ url_for('view_sessions', group_id=group_id) }}">Back to Sessions</a>
+    </div>
+</body>
+</html>

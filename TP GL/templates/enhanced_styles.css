@@ -1,0 +1,224 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #EAC4D5, #D6EADF, #B8E0D2, #95B8D1, #809BCE);
+    background-size: 200% 200%;
+    color: #333;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    animation: gradientMove 8s ease infinite;
+}
+
+/* Keyframes for body background animation */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Header styling */
+.header {
+    background: linear-gradient(135deg, #7371FC, #A594F9, #CDC1FF, #F5EFFF, #E5D9F2);
+    background-size: 200% 200%;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: headerGradientMove 6s ease infinite;
+}
+
+/* Keyframes for header background animation */
+@keyframes headerGradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Content area */
+.content {
+    padding: 40px;
+    text-align: left;
+    max-width: 1200px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Forms */
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #4a90e2;
+    font-size: 1.1rem;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #4a90e2;
+    outline: none;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+/* Buttons */
+button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+}
+
+button.edit {
+    background: #28a745; /* Green for edit */
+    color: white;
+}
+
+button.edit:hover {
+    background: #218838;
+}
+
+button.delete {
+    background: #dc3545; /* Red for delete */
+    color: white;
+}
+
+button.delete:hover {
+    background: #c82333;
+}
+
+button.primary {
+    background: #4a90e2; /* Blue for primary actions */
+    color: white;
+}
+
+button.primary:hover {
+    background: #357abd;
+}
+
+button.secondary {
+    background: #6c757d; /* Gray for secondary actions */
+    color: white;
+}
+
+button.secondary:hover {
+    background: #5a6268;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+table th {
+    background: #4a90e2;
+    color: white;
+    text-transform: uppercase;
+}
+
+table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+table tr:hover {
+    background: #f1f1f1;
+}
+
+/* Links */
+a {
+    color: #4a90e2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #357abd;
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 0.9rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+    .content {
+        padding: 20px;
+    }
+    button {
+        width: 100%;
+    }
+}

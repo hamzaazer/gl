@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groups - {{ class_data['name'] }}</title>
+    <link rel="stylesheet" href="enhanced_styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Groups for Class: {{ class_data['name'] }}</h1>
+    </div>
+    
+    <div class="content">
+        <a href="{{ url_for('add_group', class_id=class_data['id']) }}" class="btn">Add New Group</a>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Group Name</th>
+                    <th>Type</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for group in groups %}
+                    <tr>
+                        <td>{{ group['name'] }}</td>
+                        <td>{{ group['type'] }}</td>
+                        <td>
+                            <a href="{{ url_for('view_students', group_id=group['id']) }}" class="btn btn-view">View Students</a>
+                            <a href="{{ url_for('view_sessions', group_id=group['id']) }}" class="btn">View Sessions</a>
+                            <a href="{{ url_for('edit_group', group_id=group['id']) }}" class="btn btn-edit">Edit</a>
+                            <form action="{{ url_for('delete_group', group_id=group['id']) }}" method="post" style="display:inline;">
+                                <button type="submit" class="btn btn-delete">Delete</button>
+                            </form>
+                        </td>
+                       
+                        
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <a href="{{ url_for('classes') }}" class="btn">Back to Classes</a>
+    </div>
+</body>
+</html>

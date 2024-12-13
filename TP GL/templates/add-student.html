@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Student</title>
+    <link rel="stylesheet" href="enhanced_styles.css">
+</head>
+<body>
+    <h1>Add New Student to Group: {{ group.name }}</h1>
+
+    <form method="POST" action="{{ url_for('add_student', group_id=group.id) }}">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+        <label for="surname">Familyname:</label>
+        <input type="text" id="surname" name="surname" required>
+        <br><br>
+        <button type="submit">Add Student</button>
+    </form>
+
+    <h2>Or Upload Excel File</h2>
+    <form method="POST" action="{{ url_for('add_students_excel', group_id=group.id) }}" enctype="multipart/form-data">
+        <label for="excel_file">Upload Excel File:</label>
+        <input type="file" name="excel_file" accept=".xlsx, .xls" required>
+        <br>
+        <button type="submit">Upload and Add Students</button>
+    </form>
+
+    <br>
+    <a href="{{ url_for('view_students', group_id=group.id) }}">Back to Students</a>
+</body>
+</html>

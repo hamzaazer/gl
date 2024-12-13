@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes Disponibles</title>
+    <link rel="stylesheet" href="enhanced_styles.css">
+</head>
+<body>
+
+    <div class="header">
+        <h1>List of classes</h1>
+    </div>
+
+    <div class="content">
+        <table>
+            <thead>
+                <tr>
+                    <th>Fullname</th>
+                    <th>Speciality</th>
+                    <th>level</th>
+                    <th>year</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for class in classes %}
+                    <tr>
+                        <td>{{ class['name'] }}</td>
+                        <td>{{ class['specialty'] }}</td>
+                        <td>{{ class['level'] }}</td>
+                        <td>{{ class['year'] }}</td>
+                        <td>
+                            <a href="/edit-class/{{ class['id'] }}">
+                                <button class="btn btn-edit">Edit</button>
+                            </a>
+                            <form action="/delete-class/{{ class['id'] }}" method="POST" style="display:inline;">
+                                <button type="submit" class="btn btn-delete">deleate</button>
+                            </form>
+                            <a href="/class/{{ class['id'] }}/groups">
+                                <button class="btn">Groups</button>
+                            </a>
+                            
+                            
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/add-class"><button class="btn">Add a Class</button></a>
+    </div>
+
+</body>
+</html>

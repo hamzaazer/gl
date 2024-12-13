@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notification</title>
+</head>
+<body>
+    <h1>Justificatio</h1>
+    <ul id="file-list"></ul>
+
+    <script>
+        const fileList = document.getElementById('file-list');
+        let currentFiles = [];
+
+        async function fetchFiles() {
+            const response = await fetch('/files');
+            const files = await response.json();
+
+            files.forEach(file => {
+                if (!currentFiles.includes(file)) {
+                    currentFiles.push(file);
+                    const li = document.createElement('li');
+                    li.innerHTML = `<a href="/download/${file}" download>${file}</a>`;
+                    fileList.appendChild(li);
+                }
+            });
+        }
+
+        setInterval(fetchFiles, 5000);
+
+        fetchFiles();
+    </script>
+</body>
+</html>

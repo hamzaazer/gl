@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Session</title>
+    <link rel="stylesheet" href="enhanced_styles.css"> <!-- Link to your enhanced CSS -->
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <h1>Add New Session</h1>
+    </header>
+
+    <!-- Content Section -->
+    <div class="content">
+        <h2>Create a New Session</h2>
+
+        <!-- Add Session Form -->
+        <form action="{{ url_for('add_session', group_id=group_id) }}" method="POST">
+            <div class="form-group">
+                <label for="session_name">Session Name</label>
+                <input type="text" id="session_name" name="session_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="session_date">Date</label>
+                <input type="date" id="session_date" name="session_date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="session_time">Time</label>
+                <input type="time" id="session_time" name="session_time" required>
+            </div>
+
+            <div class="form-group">
+                <label for="session_location">Location</label>
+                <input type="text" id="session_location" name="session_location" required>
+            </div>
+
+            <div class="form-group">
+                <label for="session_description">Description</label>
+                <textarea id="session_description" name="session_description" rows="5" required></textarea>
+            </div>
+
+            <div class="form-buttons">
+                <button type="submit" class="primary">Save Session</button>
+                <button type="reset" class="secondary">Reset Form</button>
+            </div>
+        </form>
+
+        <!-- Back to Sessions Link -->
+        <a href="{{ url_for('view_sessions', group_id=group_id) }}" class="btn btn-back">Back to Sessions</a>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Session Management System</p>
+    </footer>
+</body>
+</html>
